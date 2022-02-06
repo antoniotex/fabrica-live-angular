@@ -8,12 +8,9 @@ import { Pokemon } from '../model/Pokemon';
 })
 export class PokemonCardComponent {
   @Input()
-  public pokemon: Pokemon | undefined
+  public pokemon!: Pokemon;
 
-  public formatId = (id?: number): string => {
-    if(!id){
-      return '000'
-    }
+  public formatId = (id: number): string => {
     const aux = id.toString()
 
     if(aux.length === 1){

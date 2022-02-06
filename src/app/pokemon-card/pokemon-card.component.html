@@ -1,17 +1,17 @@
-<div class="pokemon-card">
+<div class="pokemon-card" *ngIf="pokemon">
   <div class="pokemon-card__image">
-    <img [src]="'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/'+formatId(pokemon?.number)+'.png'" alt="Pokemon Image">
+    <img [src]="'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/'+formatId(pokemon.number)+'.png'" alt="Pokemon Image">
   </div>
 
   <div class="pokemon-card__number">
-    N° {{formatId(pokemon?.number)}}
+    N° {{formatId(pokemon.number)}}
   </div>
 
   <div class="pokemon-card__name">
-    {{pokemon?.name}}
+    {{pokemon.name}}
   </div>
 
   <div class="pokemon-card__types">
-    <div class="pokemon-card__type pokemon-card__type" *ngFor="let type of pokemon?.types" [class]="'pokemon-card__type--'+type.toLocaleLowerCase()">{{type}}</div>
+    <div class="pokemon-card__type pokemon-card__type" *ngFor="let type of pokemon.types" [class]="'pokemon-card__type--'+type.toLocaleLowerCase()">{{type}}</div>
   </div>
 </div>
